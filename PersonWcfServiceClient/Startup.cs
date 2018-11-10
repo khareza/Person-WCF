@@ -25,12 +25,11 @@ namespace PersonWcfServiceClient
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseMvc(options => options.MapRoute(
+                name:"default",
+                template: "{controller}/{action}/{id?}", 
+                defaults: new {controller = "Person",action = "Index" }));
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
-            app.UseMvc();
             app.UseStaticFiles();
             app.UseStatusCodePages();
             app.UseDeveloperExceptionPage();

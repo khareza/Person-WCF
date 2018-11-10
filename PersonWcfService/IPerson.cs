@@ -12,7 +12,7 @@ namespace PersonWcfService
     public interface IPerson
     {
         [OperationContract]
-        void CreatePerson(int id, string FirstName, string LastName);
+        void CreatePerson(string FirstName, string LastName);
 
         [OperationContract]
         Person GetPersonById(int id);
